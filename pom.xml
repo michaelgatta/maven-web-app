@@ -112,13 +112,13 @@
             <repository>
               <id>nexus</id>
               <name>RayCoy Solutions Releases Nexus Repository</name>
-              <url>http://172.31.36.233:8081/repository/raycoy-releases/</url>
+              <url>http://54.146.227.224:8081/repository/jenkins-release/</url>
             </repository>
 
             <snapshotRepository>
               <id>nexus</id>
               <name>RayCoy Solutions Snapshot Nexus Repository </name>
-              <url>http://172.31.36.233:8081/repository/raycoy-snapshot/</url>
+              <url>http://54.146.227.224:8081/repository/jenkins-snapshots/</url>
             </snapshotRepository>
 
         </distributionManagement>
