@@ -5,7 +5,7 @@ FROM adoptopenjdk:11-jre-hotspot
 WORKDIR /app
 
 # Copy the JAR file and any necessary resources into the container
-COPY target/maven-java-app.jar /app/maven-java-app.jar
+COPY /target/maven-java-app.jar /app/maven-java-app.jar
 
 EXPOSE 8000
 
