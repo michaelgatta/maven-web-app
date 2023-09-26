@@ -17,7 +17,7 @@ RUN mvn clean install -DskipTests
 FROM tomcat:9.0-jre11-slim
 
 # Copy the built WAR file from the previous stage to Tomcat's webapps directory
-COPY --from=build /app/target/my-web-app.war /usr/local/tomcat/webapps/
+COPY --from=build /app/target/maven-web-app.war /usr/local/tomcat/webapps/
 
 # Expose the default Tomcat port (8080)
 EXPOSE 8080
