@@ -13,8 +13,8 @@ spec:
         app: nginx
     spec:
       containers:
-        - name: nginx-container
-          image: nginx:latest
+        - name: mike
+          image: michaelgat/originalwork
           ports:
             - containerPort: 80
 ---
