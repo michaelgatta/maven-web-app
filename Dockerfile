@@ -5,7 +5,7 @@ FROM adoptopenjdk:11-jre-hotspot
 WORKDIR /app
 
 # Copy the JAR file and any necessary resources into the container
-COPY /target/maven-java-app.* /app/maven-java-app.*
+COPY workspace/target/maven-web-app.* /app/maven-web-app.*
 
 
 # Specify the command to run your application
