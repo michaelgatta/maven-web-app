@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mike
-          image: michaelgat/originalwork
+          image: michaelgat/mavenwork
           ports:
             - containerPort: 80
 ---
