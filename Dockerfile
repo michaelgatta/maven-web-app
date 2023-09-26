@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy the JAR file and any necessary resources into the container
 COPY target/maven-web-app.* /app/maven-web-app.*
 
+EXPOSE 3000
 
 # Specify the command to run your application
 CMD ["java", "-jar", "my-java-app.jar"]
