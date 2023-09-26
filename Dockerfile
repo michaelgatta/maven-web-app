@@ -1,15 +1,14 @@
-# Use a base image that includes a servlet container (Tomcat in this case)
-FROM tomcat:9.0-jre11-slim
+# Use an official OpenJDK runtime as a parent image
+FROM adoptopenjdk:11-jre-hotspot
 
-# Remove the default ROOT web application (optional)
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy your WAR file into Tomcat's webapps directory
-COPY maven-web-app.war /usr/local/tomcat/webapps/ROOT.war
+# Copy the JAR file and any necessary resources into the container
+COPY target/maven-java-app.jar /app/maven-java-app.jar
 
-# Expose the HTTP port (default is 8080)
-EXPOSE 8080
+EXPOSE 8000
 
-# Start Tomcat when the container runs
-CMD ["catalina.sh", "run"]
+# Specify the command to run your application
+CMD ["java", "-jar", "my-java-app.jar"]
 
