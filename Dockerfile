@@ -16,8 +16,11 @@ RUN mvn clean install -DskipTests
 # Use a Tomcat base image for the runtime environment
 FROM tomcat:9.0-jre11-slim
 
+# Remove the default ROOT web application (optional)
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+
 # Copy the built WAR file from the previous stage to Tomcat's webapps directory
-COPY --from=build /app/target/maven-web-app.war /usr/local/tomcat/webapps/
+COPY --from=build /app/target/maven-web-app.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose the default Tomcat port (8080)
 EXPOSE 8080
