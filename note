@@ -1,0 +1,9 @@
+i have 2 jenkinsfile 
+* jenkinsfile1 is for duckerhub 
+* jenkinsfile 2 is for ecr 
+
+j2 is for deploying jenkins as pod to k8s cluster 
+plugings used 1 kubernetes
+                2 k8s cli
+                3 credencial aws secret text passwrd and username ***aws credentials > aws configure get aws_access_key_id
+                        aws configure get aws_secret_access_key
