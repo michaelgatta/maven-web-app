@@ -28,11 +28,15 @@ pipeline {
             }
         }
 
-         stage("maven build"){
-        def mavenHome = tool name: "maven-3.9.4" , type : "maven"
-        def mavenCMD = "${mavenHome}/bin/mvn "
-        sh "${mavenCMD} clean package"
-    }
+        stage("maven build") {
+            steps {
+                script {
+                    def mavenHome = tool name: "maven-3.9.4", type: "maven"
+                    def mavenCMD = "${mavenHome}/bin/mvn"
+                    sh "${mavenCMD} clean package"
+                }
+            }
+        }
 
         stage('docker build') {
             steps {
@@ -61,5 +65,13 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            echo 'Build and deployment succeeded!'
+        }
+        failure {
+            echo 'Build or deployment failed!'
+        }
+    }
 }
-    
