@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8sbook-deploy
+spec:
+  selector:
+    matchLabels:
+      app: k8sbook
+  template:
+    metadata:
+      labels:
+        app: k8sbook
+    spec:
+      containers:
+      - name: k8sbook
+        image: 581426944935.dkr.ecr.us-east-1.amazonaws.com/mike00000:latest
+        ports:
+        - containerPort: 8080
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8sbook-svc
+spec:
+  type: NodePort
+  selector:
+    app: k8sbook
+  ports:
+  - port: 8080
+    targetPort: 8080
